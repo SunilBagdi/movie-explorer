@@ -42,7 +42,7 @@ const RelatedMovies = ({movieId}) => {
             </div>
         )}
         {!loading && (
-            <div className='flex flex-wrap p-6 grid sm:grid-cols-4 gap-3'>
+            <div className='flex flex-wrap p-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-6'>
                 {
                     similarMovies.slice().map((movie) => (
                         <MovieCard 

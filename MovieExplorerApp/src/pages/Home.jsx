@@ -196,7 +196,7 @@ export const Home = () => {
       )}
 
       {!loading && !error && (
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-6 justify-center mt-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-6 justify-center mt-4">
           {
           movies.map((movie) => (
             <MovieCard

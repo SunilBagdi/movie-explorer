@@ -59,7 +59,7 @@ const MovieDetails = () => {
         <p className="text-red-400 text-xl">{error}</p>
         <button
           onClick={() => navigate(-1)}
-          className="bg-yellow-400 text-gray-900 px-6 py-2
+          className="bg-yellow-400 text-gray-900 px-6 py-2 cursor-pointer
                      rounded-lg font-semibold hover:bg-yellow-300"
         >
           ← Go Back
@@ -89,7 +89,7 @@ const MovieDetails = () => {
           onClick={() => navigate(-1)}
           className="absolute top-4 left-4 bg-black/50 text-white
                      px-4 py-2 rounded-lg hover:bg-black/80 font-bold
-                     transition-colors backdrop-blur-sm" 
+                     transition-colors backdrop-blur-sm cursor-pointer" 
         >
           ← Back
         </button>
