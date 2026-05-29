@@ -14,11 +14,11 @@ const Navbar = () => {
   return (
 
     <nav className='bg-gray-900 dark:bg-gray-950 text-white px-6 py-4 flex items-center justify-between sticky top-0 z-50 shadow-black/40'>
-        <NavLink to="/" className='text-xl font-bold text-yellow-400 tracking-wide'>
+        <NavLink to="/" className='text-md font-bold text-yellow-400 tracking-wide'>
             MovieExplorer
         </NavLink>
 
-        <ul className='flex gap-6 items-center'>
+        <ul className='flex gap-4 items-center'>
             <li>
                 <NavLink to='/' end className={navLinkClass}>
                     Home
