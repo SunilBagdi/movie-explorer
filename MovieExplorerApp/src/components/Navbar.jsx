@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
 import { useTheme } from '../context/ThemeContext';
-
+import logo from '../assets/logo.png'
 const Navbar = () => {
 
     const navLinkClass = ({isActive}) =>
@@ -15,7 +15,10 @@ const Navbar = () => {
 
     <nav className='bg-gray-900 dark:bg-gray-950 text-white px-6 py-4 flex items-center justify-between sticky top-0 z-50 shadow-black/40'>
         <NavLink to="/" className='text-md font-bold text-yellow-400 tracking-wide'>
-            MovieExplorer
+            <div className='flex gap-2'>
+                <img src={logo} className='w-7 bg-gray-200 rounded p-0.5' alt=''/>
+                <p>MovieExplorer</p>
+            </div>
         </NavLink>
 
         <ul className='flex gap-4 items-center'>
