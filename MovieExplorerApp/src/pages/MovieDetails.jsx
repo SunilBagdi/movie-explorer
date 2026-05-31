@@ -42,7 +42,6 @@ const MovieDetails = () => {
     fetchMovieDetails()
   }, [id])
 
-
   if(loading) {
     return(
       <div className="flex justify-center items-center min-h-screen bg-gray-950">

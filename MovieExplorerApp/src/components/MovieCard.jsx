@@ -24,8 +24,9 @@ const MovieCard = ({id, title, rating, poster, year, genre}) => {
   return (
 
      <div onClick={movieDetailsHandleClick} className="bg-gray-800 dark:bg-gray-950 rounded-xl overflow-hidden 
-                    w-full hover:scale-105 hover:shadow-2xl hover:shadow-yellow-400/10
-                    transition-all cdfduration-300 cursor-pointer group">
+                    h-full hover:scale-105 hover:shadow-2xl hover:shadow-yellow-400/10
+                    transition-all cdfduration-300 cursor-pointer group
+                    flex flex-col justify-between">
 
       {/* Movie Poster */}
       <div className="relative w-full overflow-hidden bg-gray-700">
@@ -66,6 +67,12 @@ const MovieCard = ({id, title, rating, poster, year, genre}) => {
           duration-200 hover:scale-125
           ${favorited ? 'text-red-500' : 'text-white/70'}`}>
           {favorited ? '❤️' : '🤍'}
+        </button>
+
+        <button onClick={handleFavorite} className={`bg-yellow-400 w-full py-3 text-xs font-bold transition-colors duration-200 text-center
+        ${favorited ? 'bg-gray-400 text-gray hover:bg-red-600' :
+         'bg-yellow-500 text-gray-900 hover:bg-yellow-500'}`}>
+          {favorited ? 'Remove from favorites' : 'Add to favorites'}
         </button>
 
     </div>

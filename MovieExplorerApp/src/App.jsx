@@ -15,7 +15,6 @@ function App() {
         <Route index element={<Home />} />
         <Route path='/favorites' element={<Favorites/>} />
         <Route path='/about' element={<About />} />
-
         <Route path='movie/:id' element={<MovieDetails />} />
       </Route>
    </Routes>
