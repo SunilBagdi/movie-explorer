@@ -1,6 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
-
+import Logo from '../assets/logo.png'
 const Footer = () => {
 
   const quickLink =  [
@@ -25,9 +25,12 @@ const Footer = () => {
 
         {/* Brand Section */}
         <div className="flex flex-col gap-3">
-          <span className="text-2xl font-bold text-yellow-400 tracking-wide">
-            🎬 MovieExplorer
-          </span>
+          <NavLink to="/" className='text-md font-bold text-yellow-400 tracking-wide'>
+            <div className='flex gap-2'>
+                <img src={Logo} className='w-7 bg-gray-200 rounded p-0.5' alt=''/>
+                <p>MovieExplorer</p>
+            </div>
+          </NavLink>
           <p className="text-sm leading-relaxed">
             Discover, explore, and save your favorite movies — all in one place.
           </p>
