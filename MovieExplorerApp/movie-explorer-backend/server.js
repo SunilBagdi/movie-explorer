@@ -8,15 +8,25 @@ dotenv.config();
 // Express app
 const app = express();
 
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://movie-explorer-5eo5plv5y-sunil-bagdi-s-projects.vercel.app"
+];
+
 app.use(
   cors({
-    origin: [
-      "http://localhost:5173",
-      "https://movieexplorer-gules.vercel.app"
-    ],
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
     credentials: true,
   })
 );
+
+
 app.use(express.json()); 
 app.use(express.urlencoded({ extended: true }));
 
