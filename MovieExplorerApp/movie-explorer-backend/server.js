@@ -10,7 +10,10 @@ const app = express();
 
 app.use(
   cors({
-    origin: "http://localhost:5173", 
+    origin: [
+      "http://localhost:5173",
+      "https://movieexplorer-gules.vercel.app"
+    ],
     credentials: true,
   })
 );
@@ -54,6 +57,6 @@ app.use((err, req, res, next) => {
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-  console.log(`Server is running on port: http://localhost:${PORT}`);
+  console.log(`Server is running on port ${PORT}`);
   console.log(`Environment: ${process.env.NODE_ENV || "development"}`);
 });
