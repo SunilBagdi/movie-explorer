@@ -9,19 +9,14 @@ dotenv.config();
 const app = express();
 
 const allowedOrigins = [
-  "http://localhost:5173",
-  "https://movie-explorer-5eo5plv5y-sunil-bagdi-s-projects.vercel.app"
+  'http://localhost:5173', // local dev (Vite)
+  'https://movie-explorer-taupe-xi.vercel.app', // deployed frontend
 ];
 
+app.use(cors());
 app.use(
   cors({
-    origin: function (origin, callback) {
-      if (!origin || allowedOrigins.includes(origin)) {
-        callback(null, true);
-      } else {
-        callback(new Error("Not allowed by CORS"));
-      }
-    },
+    origin: allowedOrigins,
     credentials: true,
   })
 );

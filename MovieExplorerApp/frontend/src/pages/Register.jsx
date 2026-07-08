@@ -13,6 +13,7 @@ const Register = () => {
     password: "",
     confirmPassword: "",
   });
+
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -27,11 +28,11 @@ const Register = () => {
 
     // Password match check
     if (formData.password !== formData.confirmPassword) {
-      return setError("Dono passwords match nahi kar rahe!");
+      return setError("Password did not match!");
     }
 
     if (formData.password.length < 6) {
-      return setError("Password kam se kam 6 characters ka hona chahiye!");
+      return setError("password less than 6 character!");
     }
 
     setLoading(true);
@@ -39,7 +40,7 @@ const Register = () => {
     const result = await register(formData.name, formData.email, formData.password);
 
     if (result.success) {
-      navigate("/"); // Registration ke baad home par bhejo
+      navigate("/"); 
     } else {
       setError(result.message);
     }
