@@ -9,8 +9,8 @@ import { Home } from "./pages/Home";
 import MovieDetails from "./pages/MovieDetails";
 import Favorites from "./pages/Favorites";
 import About from "./pages/About";
-import Login from "./pages/Login";       // NEW
-import Register from "./pages/Register"; // NEW
+import Login from "./pages/Login";      
+import Register from "./pages/Register"; 
 
 // Protected Route component - login ke bina access nahi
 const ProtectedRoute = ({ children }) => {
@@ -38,8 +38,7 @@ function App() {
           <Route path="/register" element={<Register />} />
 
           {/* Protected Routes */}
-          <Route
-            path="/"
+          <Route path="/"
             element={
               <ProtectedRoute>
                 <Layout />

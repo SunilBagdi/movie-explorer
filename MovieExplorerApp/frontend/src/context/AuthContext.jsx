@@ -9,7 +9,6 @@ export const AuthProvider = ({ children }) => {
   const [token, setToken] = useState(localStorage.getItem("token") || null);
   const [loading, setLoading] = useState(true);
 
-  // App load hone par check karo kya user logged in hai
   useEffect(() => {
     if (token) {
       fetchCurrentUser();
@@ -18,7 +17,6 @@ export const AuthProvider = ({ children }) => {
     }
   }, []);
 
-  // Current user ki info lao
   const fetchCurrentUser = async () => {
     try {
       const res = await fetch(`${API_URL}/auth/me`, {
@@ -29,7 +27,6 @@ export const AuthProvider = ({ children }) => {
       if (data.success) {
         setUser(data.user);
       } else {
-        // Token invalid hai, logout karo
         logout();
       }
     } catch (error) {
@@ -39,7 +36,6 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  // Register function
   const register = async (name, email, password) => {
     const res = await fetch(`${API_URL}/auth/register`, {
       method: "POST",
@@ -55,7 +51,7 @@ export const AuthProvider = ({ children }) => {
       setUser(data.user);
     }
 
-    return data; // { success, message } return karo
+    return data; 
   };
 
   // Login function

@@ -23,10 +23,10 @@ const protect = async (req, res, next) => {
 
     req.user = await User.findById(decoded.id);
 
-    if (!req.user) {
+    if(!req.user) {
       return res.status(401).json({
         success: false,
-        message: "User not found. Please log in again.",
+        message: "User not found. Please login again.",
       });
     }
 
