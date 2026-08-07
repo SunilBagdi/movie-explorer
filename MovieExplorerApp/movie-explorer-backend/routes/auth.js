@@ -69,7 +69,7 @@ router.post(
       console.error("Register Error:", error);
       res.status(500).json({
         success: false,
-        message: "Server error. Dobara try karo.",
+        message: "Server error. try again.",
       });
     }
   }
