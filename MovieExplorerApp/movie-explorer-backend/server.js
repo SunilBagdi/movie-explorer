@@ -9,11 +9,10 @@ dotenv.config();
 const app = express();
 
 const allowedOrigins = [
-  'http://localhost:5173', // local dev (Vite)
-  'https://movie-explorer-taupe-xi.vercel.app', // deployed frontend
+  "http://localhost:5173",
+  "https://movie-explorer-taupe-xi.vercel.app",
 ];
 
-app.use(cors());
 app.use(
   cors({
     origin: allowedOrigins,
