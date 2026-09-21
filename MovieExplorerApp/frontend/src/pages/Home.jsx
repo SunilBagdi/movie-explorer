@@ -123,8 +123,8 @@ export const Home = () => {
 
     try {
       const endpoint = query
-      ? `${BASE_URL}/search/movie?api_key=${API_KEY}&query=${query}`
-      : `${BASE_URL}/movie/popular?api_key=${API_KEY}`
+      ? `${BASE_URL}/search/movie?api_key=${API_KEY}&query=${query}{`
+      : `$BASE_URL}/movie/popular?api_key=${API_KEY}`
       
       const response = await fetch(endpoint)
       if (!response.ok) {
